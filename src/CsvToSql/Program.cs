@@ -112,8 +112,6 @@ namespace CsvToSql
 
             try
             {
-                Console.ReadLine();
-
                 var sqlTable = SqlTable.CsvToSqlTable(GetTextReader(path), sqlWriter, hasHeader, delimiter, count);
                 var output = "";
                 if (sqlTable != null)
