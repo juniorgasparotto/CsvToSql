@@ -26,7 +26,7 @@ namespace CsvToSql
 
             textReader.Close();
             SqlTable sqlTable = null;
-            if (rows.Count > 0 && count > -1)
+            if (rows.Count > 0)
             {
                 sqlTable = new SqlTable();
                 sqlTable.Headers = new List<SqlColumnTypeDefinition>();
