@@ -49,7 +49,7 @@ Convert a CSV file to SQL output
  
 ``` 
 
-* Open "C:\output.sql" file to show the content or omit the command "... > C:\output.sql" to show in console.
+Open "C:\output.sql" file to show the content or omit the command "... > C:\output.sql" to show in console.
  
 ## Contributors
  * [juniorgasparotto](https://github.com/juniorgasparotto)
