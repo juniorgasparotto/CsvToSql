@@ -47,9 +47,9 @@ Convert a CSV file to SQL output
  C:\CsvToSql.exe -p "C:/Users/[user-name]/Desktop/in.csv" -count 10 -delimiter ";" -insert-format break-line > C:\output.sql
  C:\CsvToSql.exe -p "C:/Users/[user-name]/Desktop/in.csv" -count 10 -delimiter ";" -insert-format break-line-and-show-columns > C:\output.sql
  
- Open "C:\output.sql" file to show the content or omit the command "... > C:\output.sql" to show in console.
- 
 ``` 
+
+* Open "C:\output.sql" file to show the content or omit the command "... > C:\output.sql" to show in console.
  
 ## Contributors
  * [juniorgasparotto](https://github.com/juniorgasparotto)
