@@ -5,7 +5,7 @@ Convert a CSV file to SQL output
 
 #Executable download
 
-* https://github.com/juniorgasparotto/CsvToSql/src/CsvToSql/bin/Debug/CsvToSql.exe
+* https://github.com/juniorgasparotto/CsvToSql/raw/master/src/CsvToSql/bin/Debug/CsvToSql.exe
 
 ##Features
 
