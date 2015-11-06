@@ -110,18 +110,27 @@ namespace CsvToSql
                 return;
             }
 
-            var sqlTable = SqlTable.CsvToSqlTable(GetTextReader(path), sqlWriter, hasHeader, delimiter, count);
-            var output = "";
-            if (sqlTable != null)
-            {
-                output = sqlWriter.GenerateTableWithInserts(sqlTable, tableName, maxBulk, insertStringFormat);
+            try
+            { 
+                var sqlTable = SqlTable.CsvToSqlTable(GetTextReader(path), sqlWriter, hasHeader, delimiter, count);
+                var output = "";
+                if (sqlTable != null)
+                {
+                    output = sqlWriter.GenerateTableWithInserts(sqlTable, tableName, maxBulk, insertStringFormat);
+                }
+                else
+                {
+                    output = "The 'CSV' is empty";
+                }
+                Console.Write(output);
             }
-            else
+            catch (Exception ex)
             {
-                output = "The 'CSV' is empty";
+                Console.Write("error: ");
+                Console.WriteLine(ex.Message);
+                Console.WriteLine("Try `csvtosql --help' for more information.");
+                return;
             }
-
-            Console.Write(output);
         }
 
         private static TextReader GetTextReader(string path)
