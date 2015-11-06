@@ -152,6 +152,7 @@ namespace CsvToSql
 
                 foreach (var bulkInsert in builderList)
                 {
+                    builderFinal.AppendLine();
                     builderFinal.Append("INSERT INTO ");
                     builderFinal.Append(tableName);
                     builderFinal.Append(" ");

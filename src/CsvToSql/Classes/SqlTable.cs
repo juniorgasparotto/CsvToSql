@@ -15,7 +15,7 @@ namespace CsvToSql
         public List<SqlColumnTypeDefinition> Headers { get; set; }
         public List<SqlRow> Rows { get; set; }
 
-        public static SqlTable CsvToSqlTable(TextReader textReader, ISqlWriter sqlWriter, bool hasHeader = true, string delimiter = ",")
+        public static SqlTable CsvToSqlTable(TextReader textReader, ISqlWriter sqlWriter, bool hasHeader = true, string delimiter = ",", int count = -1)
         {
             var config = new CsvHelper.Configuration.CsvConfiguration();
             config.Delimiter = delimiter;
@@ -26,13 +26,19 @@ namespace CsvToSql
 
             textReader.Close();
             SqlTable sqlTable = null;
-            if (rows.Count > 0)
+            if (rows.Count > 0 && count > -1)
             {
                 sqlTable = new SqlTable();
                 sqlTable.Headers = new List<SqlColumnTypeDefinition>();
                 sqlTable.Rows = new List<SqlRow>();
+                var i = 0;
                 foreach (var row in rows)
                 {
+                    if (i == count)
+                        break;
+
+                    i++;
+
                     var columns = (System.Dynamic.ExpandoObject)row;
                     var sqlRow = new SqlRow();
                     sqlTable.Rows.Add(sqlRow);
