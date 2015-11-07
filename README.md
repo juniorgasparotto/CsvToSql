@@ -1,7 +1,7 @@
 #CsvToSql
 Convert a CSV file to SQL output
-[//]: <> (This is also a comment.)
-[comment]: <> ([Build Status](https://travis-ci.org/juniorgasparotto/csvtosql.png)](https://travis-ci.org/juniorgasparotto/csvtosql))
+
+[Build Status](https://travis-ci.org/juniorgasparotto/csvtosql.png)](https://travis-ci.org/juniorgasparotto/csvtosql)
 
 #Executable download
 
