@@ -9,7 +9,8 @@ Convert a CSV file to SQL output
 
 ##Features
 
-  * Convert CSV file to SQL insert command 
+  * Convert CSV file to SQL insert command
+  * Attempts to automatically discover the typing of each field
   * Database supported:  SQL Server (extensible)
 
 ##Tutorials
@@ -46,6 +47,8 @@ Convert a CSV file to SQL output
  C:\CsvToSql.exe -p "C:/Users/[user-name]/Desktop/in.csv" -delimiter ";" -tname "myTable" -maxbulk 1 > C:\output.sql
  C:\CsvToSql.exe -p "C:/Users/[user-name]/Desktop/in.csv" -count 10 -delimiter ";" -insert-format break-line > C:\output.sql
  C:\CsvToSql.exe -p "C:/Users/[user-name]/Desktop/in.csv" -count 10 -delimiter ";" -insert-format break-line-and-show-columns > C:\output.sql
+ 
+ printf "field1,field2,field3,field4\n1,2,3,4" | csvtosql.exe -delimiter ","
  
 ``` 
 
