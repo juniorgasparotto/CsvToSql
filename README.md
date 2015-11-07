@@ -40,13 +40,13 @@ Convert a CSV file to SQL output
 #Example
 
 ```
- C:\CsvToSql.exe -p "C:/Users/[user-name]/Desktop/in.csv" > C:\output.sql
- C:\CsvToSql.exe -p "C:/Users/[user-name]/Desktop/in.csv" -delimiter ";" > C:\output.sql
- C:\CsvToSql.exe -p "C:/Users/[user-name]/Desktop/in.csv" -delimiter ";" -not-header > C:\output.sql 
- C:\CsvToSql.exe -p "C:/Users/[user-name]/Desktop/in.csv" -delimiter ";" -tname "myTable" > C:\output.sql
- C:\CsvToSql.exe -p "C:/Users/[user-name]/Desktop/in.csv" -delimiter ";" -tname "myTable" -maxbulk 1 > C:\output.sql
- C:\CsvToSql.exe -p "C:/Users/[user-name]/Desktop/in.csv" -count 10 -delimiter ";" -insert-format break-line > C:\output.sql
- C:\CsvToSql.exe -p "C:/Users/[user-name]/Desktop/in.csv" -count 10 -delimiter ";" -insert-format break-line-and-show-columns > C:\output.sql
+ C:\CsvToSql.exe -path "C:/in.csv" > C:\output.sql
+ C:\CsvToSql.exe -path "C:/in.csv" -delimiter ";" > C:\output.sql
+ C:\CsvToSql.exe -path "C:/in.csv" -delimiter ";" -not-header > C:\output.sql 
+ C:\CsvToSql.exe -path "C:/in.csv" -delimiter ";" -tname "myTable" > C:\output.sql
+ C:\CsvToSql.exe -p "C:/in.csv" -delimiter ";" -tname "myTable" -maxbulk 1 > C:\output.sql
+ C:\CsvToSql.exe -p "C:/in.csv" -count 10 -delimiter ";" -insert-format break-line > C:\output.sql
+ C:\CsvToSql.exe -p "C:/in.csv" -count 10 -delimiter ";" -insert-format break-line-and-show-columns > C:\output.sql
  
  printf "field1,field2,field3,field4\n1,2,3,4" | csvtosql.exe -delimiter ","
  
