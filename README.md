@@ -1,8 +1,6 @@
 #CsvToSql
 Convert a CSV file to SQL output
 
-[Build Status](https://travis-ci.org/juniorgasparotto/csvtosql.png)](https://travis-ci.org/juniorgasparotto/csvtosql)
-
 #Executable download
 
 * https://github.com/juniorgasparotto/CsvToSql/raw/master/src/CsvToSql/bin/Debug/CsvToSql.exe
