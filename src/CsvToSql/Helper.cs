@@ -46,7 +46,7 @@ namespace CsvToSql
         {
             if (value == null)
                 return null;
-            return value.ToString().Replace("'", "''");;
+            return value.ToString().Replace("'", "''").Replace("’", "''").Replace("‘", "''");
         }
     }
 }
