@@ -1,9 +1,9 @@
 #CsvToSql
-Convert a CSV file to SQL output
+Convert a CSV file to SQL output: sqlserver and mysql
 
 #Executable download
 
-* https://github.com/juniorgasparotto/CsvToSql/raw/master/src/CsvToSql/bin/Debug/CsvToSql.exe
+* https://github.com/matteobaccan/CsvToSql/raw/master/src/CsvToSql/bin/Debug/CsvToSql.exe
 
 ##Features
 
@@ -21,6 +21,7 @@ Convert a CSV file to SQL output
       --dbname=VALUE         Set the database name to determine the type of
                                output SQL, the options are:
                                 [sqlserver].
+                                [mysql].
       --tname=VALUE          Set the table name to generate, default is '#CSV'.
       --maxbulk=VALUE        Set the amount of 'values' that will be grouped in
                                'inserts' section, default is '25'.
@@ -40,17 +41,18 @@ Convert a CSV file to SQL output
 ```
  C:\CsvToSql.exe -path "C:/in.csv" > C:\output.sql
  C:\CsvToSql.exe -path "C:/in.csv" -delimiter ";" > C:\output.sql
- C:\CsvToSql.exe -path "C:/in.csv" -delimiter ";" -not-header > C:\output.sql 
+ C:\CsvToSql.exe -path "C:/in.csv" -delimiter ";" -not-header > C:\output.sql
  C:\CsvToSql.exe -path "C:/in.csv" -delimiter ";" -tname "myTable" > C:\output.sql
  C:\CsvToSql.exe -p "C:/in.csv" -delimiter ";" -tname "myTable" -maxbulk 1 > C:\output.sql
  C:\CsvToSql.exe -p "C:/in.csv" -count 10 -delimiter ";" -insert-format break-line > C:\output.sql
  C:\CsvToSql.exe -p "C:/in.csv" -count 10 -delimiter ";" -insert-format break-line-and-show-columns > C:\output.sql
- 
+
  printf "field1,field2,field3,field4\n1,2,3,4" | csvtosql.exe -delimiter ","
- 
-``` 
+
+```
 
 **Open "C:\output.sql" file to show the content or omit the command "... > C:\output.sql" to show in console.**
- 
+
 ## Contributors
  * [juniorgasparotto](https://github.com/juniorgasparotto)
+ * [matteobaccan](https://github.com/matteobaccan)

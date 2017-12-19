@@ -42,7 +42,7 @@ namespace CsvToSql
                 { "p|path=", "Set the file path to convert to SQL.", paramValue => path = paramValue },
                 { "delimiter=", "Set the delimiter columns, default is ';'.", paramValue => delimiter = paramValue },
                 { "count=", "Set the count line to generate", (int paramValue) => count = paramValue },
-                { "dbname=", "Set the database name to determine the type of output SQL, the options are: \r\n [sqlserver].", paramValue => sqlWriterName = paramValue },
+                { "dbname=", "Set the database name to determine the type of output SQL, the options are: \r\n [sqlserver], \r\n [mysql].", paramValue => sqlWriterName = paramValue },
                 { "tname=", "Set the table name to generate, default is '#CSV'.", paramValue => tableName = paramValue },
                 { "maxbulk=", "Set the amount of 'values' that will be grouped in 'inserts' section, default is '" + maxBulk + "'.", (int paramValue) => maxBulk = paramValue },
                 { "insert-format=", "Set the output format to 'insert values', default is 'None' and the options are: \r\n [none], \r\n [break-line], \r\n [break-line-and-show-columns]"
@@ -101,11 +101,17 @@ namespace CsvToSql
                 return;
             }
 
-            SqlServerWriter sqlWriter = null;
+            ISqlWriter sqlWriter = null;
             if (sqlWriterName == "sqlserver")
+            {
                 sqlWriter = new SqlServerWriter();
+            }
+            else if (sqlWriterName == "mysql")
+            {
+                sqlWriter = new MySQLWriter();
+            }
             else
-            { 
+            {
                 Console.Write("The parameter 'dbname' was not found");
                 return;
             }
