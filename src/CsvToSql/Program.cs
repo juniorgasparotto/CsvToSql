@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Mono.Options;
 using System.IO;
+using System.Text;
 
 namespace CsvToSql
-{ 
+{
     class Program
     {
         static int verbosity;
@@ -23,7 +24,7 @@ namespace CsvToSql
             //AddArgToDebug(ref args, "-r", "2");
             //AddArgToDebug(ref args, "-r", "3");
 
-            #endregion 
+            #endregion
 
             #region get parameters
 
@@ -46,13 +47,13 @@ namespace CsvToSql
                 { "tname=", "Set the table name to generate, default is '#CSV'.", paramValue => tableName = paramValue },
                 { "maxbulk=", "Set the amount of 'values' that will be grouped in 'inserts' section, default is '" + maxBulk + "'.", (int paramValue) => maxBulk = paramValue },
                 { "insert-format=", "Set the output format to 'insert values', default is 'None' and the options are: \r\n [none], \r\n [break-line], \r\n [break-line-and-show-columns]"
-                    , paramValue => 
+                    , paramValue =>
                     {
                         if (paramValue == "break-line")
                             insertStringFormat = SqlInsertStringFormat.BreakLineForEachColumn;
                         else if (paramValue == "break-line-and-show-columns")
                             insertStringFormat = SqlInsertStringFormat.BreakLineAndShowColumnNameForEachColumn;
-                        else 
+                        else
                             insertStringFormat = SqlInsertStringFormat.None;
                     }
                 },
@@ -62,9 +63,9 @@ namespace CsvToSql
             };
 
             #endregion
-        
+
             List<string> extra;
-            
+
             try
             {
                 extra = paramsParse.Parse(args);
@@ -94,7 +95,7 @@ namespace CsvToSql
                     Console.WriteLine(e);
                 return;
             }
-            
+
             if (showHelp)
             {
                 ShowHelp(paramsParse);
@@ -119,7 +120,7 @@ namespace CsvToSql
             try
             {
                 TextReader textReader = null;
-                
+
                 if (Console.IsInputRedirected)
                     textReader = Console.In;
                 else
@@ -135,6 +136,7 @@ namespace CsvToSql
                 {
                     output = "The 'CSV' is empty";
                 }
+                Console.OutputEncoding = Encoding.UTF8;
                 Console.Write(output);
             }
             catch (Exception ex)
@@ -148,7 +150,7 @@ namespace CsvToSql
 
         private static TextReader GetTextReader(string path)
         {
-            return new StreamReader(path);
+            return new StreamReader(path,System.Text.Encoding.UTF8);
         }
 
         private static void ShowHelp(OptionSet p)

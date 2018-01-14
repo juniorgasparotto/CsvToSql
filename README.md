@@ -10,6 +10,7 @@ Convert a CSV file to SQL output: sqlserver and mysql
   * Convert CSV file to SQL insert command
   * Attempts to automatically discover the typing of each field
   * Database supported:  SQL Server (extensible)
+  * Works with UTF-8 encoding
 
 ##Tutorials
 
