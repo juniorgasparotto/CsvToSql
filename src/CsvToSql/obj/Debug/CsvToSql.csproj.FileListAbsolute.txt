@@ -3,3 +3,9 @@ D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\CsvToSql\src\CsvToSql\bin\Debug\C
 D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\CsvToSql\src\CsvToSql\obj\Debug\CsvToSql.exe
 D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\CsvToSql\src\CsvToSql\obj\Debug\CsvToSql.pdb
 D:\Junior\Projetos\GITHUB.COM\juniorgasparotto\CsvToSql\src\CsvToSql\obj\Debug\CsvToSql.csprojResolveAssemblyReference.cache
+X:\CsvToSql.git\trunk\src\CsvToSql\bin\Debug\CsvToSql.exe
+X:\CsvToSql.git\trunk\src\CsvToSql\bin\Debug\CsvToSql.pdb
+X:\CsvToSql.git\trunk\src\CsvToSql\obj\Debug\CsvToSql.csprojResolveAssemblyReference.cache
+X:\CsvToSql.git\trunk\src\CsvToSql\obj\Debug\CsvToSql.csproj.CoreCompileInputs.cache
+X:\CsvToSql.git\trunk\src\CsvToSql\obj\Debug\CsvToSql.exe
+X:\CsvToSql.git\trunk\src\CsvToSql\obj\Debug\CsvToSql.pdb
