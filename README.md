@@ -1,7 +1,7 @@
 # CsvToSql
 Convert a CSV file to SQL output: sqlserver and mysql
 
-#Executable download
+# Executable download
 
 * https://github.com/matteobaccan/CsvToSql/raw/master/src/CsvToSql/bin/Debug/CsvToSql.exe
 
