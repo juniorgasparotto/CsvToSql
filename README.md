@@ -1,18 +1,18 @@
-#CsvToSql
+# CsvToSql
 Convert a CSV file to SQL output: sqlserver and mysql
 
 #Executable download
 
 * https://github.com/matteobaccan/CsvToSql/raw/master/src/CsvToSql/bin/Debug/CsvToSql.exe
 
-##Features
+## Features
 
   * Convert CSV file to SQL insert command
   * Attempts to automatically discover the typing of each field
   * Database supported:  SQL Server (extensible)
   * Works with UTF-8 encoding
 
-##Tutorials
+## Tutorials
 
 ```
 
@@ -37,7 +37,7 @@ Convert a CSV file to SQL output: sqlserver and mysql
 
 ```
 
-#Example
+# Example
 
 ```
  C:\CsvToSql.exe -path "C:/in.csv" > C:\output.sql
