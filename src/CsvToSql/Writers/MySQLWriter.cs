@@ -73,7 +73,7 @@ namespace CsvToSql
             }
         }
 
-        public string GenerateTableWithInserts(SqlTable sqlTable, string tableName, int maxBulk, SqlInsertStringFormat insertStringFormart)
+        public StringBuilder GenerateTableWithInserts(SqlTable sqlTable, string tableName, int maxBulk, SqlInsertStringFormat insertStringFormart)
         {
             var builderFinal = new StringBuilder();
             if (sqlTable != null)
@@ -162,7 +162,7 @@ namespace CsvToSql
                 }
             }
 
-            return builderFinal.ToString();
+            return builderFinal;
         }
     }
 }
