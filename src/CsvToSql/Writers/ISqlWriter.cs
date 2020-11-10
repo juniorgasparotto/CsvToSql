@@ -15,6 +15,6 @@ namespace CsvToSql
         string CSharpTypeToSqlType(Type type);
         Type SqlTypeToCSharpType(object value);
         string ObjectToSqlValue(object value, Type type);
-        string GenerateTableWithInserts(SqlTable sqlTable, string tableName, int maxBulk, SqlInsertStringFormat insertStringFormart);
+        StringBuilder GenerateTableWithInserts(SqlTable sqlTable, string tableName, int maxBulk, SqlInsertStringFormat insertStringFormart);
     }
 }
