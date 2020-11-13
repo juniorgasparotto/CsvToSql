@@ -127,17 +127,24 @@ namespace CsvToSql
                     textReader = GetTextReader(path);
 
                 var sqlTable = SqlTable.CsvToSqlTable(textReader, sqlWriter, hasHeader, delimiter, count);
-                var output = "";
+                var output = new StringBuilder();
                 if (sqlTable != null)
                 {
                     output = sqlWriter.GenerateTableWithInserts(sqlTable, tableName, maxBulk, insertStringFormat);
                 }
                 else
                 {
-                    output = "The 'CSV' is empty";
+                    output.Append("The 'CSV' is empty");
                 }
                 Console.OutputEncoding = Encoding.UTF8;
-                Console.Write(output);
+                int iChunkSize = 50000000;
+                for (int i = 0; i < output.Length; i += iChunkSize)
+                {
+                    int A_Size = output.Length - i >= iChunkSize ? iChunkSize : Math.Abs(output.Length - i);
+                    char[] out_i = new char[A_Size];
+                    output.CopyTo(i, out_i, 0, A_Size);
+                    Console.Write(out_i);
+                }
             }
             catch (Exception ex)
             {
